@@ -11,7 +11,8 @@ export default function App() {
   const [articles, setArticles] = useState([])
 
   const login = () => {
-
+    // hit the API, obtain JWT
+    // persist token in client window
   }
 
   const logout = () => {
