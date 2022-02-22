@@ -21,16 +21,18 @@ export default function ArticleForm(props) {
       <input
         maxLength={50}
         onChange={onChange}
+        value={values.title}
         placeholder="Enter title"
         id="title"
       />
       <textarea
         maxLength={200}
         onChange={onChange}
+        value={values.text}
         placeholder="Enter text"
         id="text"
       />
-      <select id="topic">
+      <select id="topic" onChange={onChange} value={values.topic}>
         <option value="">-- Select topic --</option>
         <option value="JavaScript">JavaScript</option>
         <option value="React">React</option>
