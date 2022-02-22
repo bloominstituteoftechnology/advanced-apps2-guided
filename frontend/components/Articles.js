@@ -12,7 +12,7 @@ export default function Articles(props) {
     getArticles()
   }, [])
 
-  if ()
+  if (spinner) return 'fetching articles...'
 
   return (
     <div className="articles">
