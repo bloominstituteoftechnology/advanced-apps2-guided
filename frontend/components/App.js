@@ -11,11 +11,11 @@ const loginUrl = 'http://localhost:9000/api/login'
 export default function App() {
   const [articles, setArticles] = useState([])
 
-  const login = () => {
+  const login = ({ username, password }) => {
     // hit the API, obtain JWT
     // persist token in client window.localStorage
     // redirect user to /articles route
-    axios.post(loginUrl, { username:  })
+    axios.post(loginUrl, { username, password })
   }
 
   const logout = () => {
