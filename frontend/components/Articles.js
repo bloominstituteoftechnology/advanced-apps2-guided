@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Articles(props) {
-  const { articles } = props
+  const { articles, getArticles } = props
 
   return (
     <div className="articles">
