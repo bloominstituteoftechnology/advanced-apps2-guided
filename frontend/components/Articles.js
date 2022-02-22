@@ -1,14 +1,13 @@
 import React from 'react'
 
 export default function Articles(props) {
-
   const { articles } = props
 
   return (
     <div className="articles">
       <h2>Articles</h2>
       {
-        articles && articles.length && props.articles.map(art => {
+        articles.map(art => {
           return (
             <div className="article" key={art.article_id}>
               <div>

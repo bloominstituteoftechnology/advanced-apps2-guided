@@ -14,11 +14,10 @@ export default function LoginForm(props) {
 
   const onSubmit = evt => {
     evt.preventDefault()
-
   }
 
   const isDisabled = () => {
-    Object.values(values).some(input => !input.trim().length)
+    return Object.values(values).some(input => !input.trim().length)
   }
 
   return (

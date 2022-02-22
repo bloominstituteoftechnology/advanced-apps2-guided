@@ -10,9 +10,8 @@ const loginUrl = 'http://localhost:9000/api/login'
 export default function App() {
   const [articles, setArticles] = useState([])
 
-  const navigate = useNavigate()
-  const redirectToLogin = () => navigate('/', { replace: true })
-  const redirectToArticles = () => navigate('/articles')
+  const redirectToLogin = () => {}
+  const redirectToArticles = () => {}
 
   const login = ({ username, password }) => {
 
@@ -43,7 +42,7 @@ export default function App() {
         <Route path="articles" element={
           <>
             <ArticleForm />
-            <Articles />
+            <Articles articles={articles} />
           </>
         } />
       </Routes>
