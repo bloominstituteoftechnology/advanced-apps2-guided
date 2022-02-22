@@ -67,7 +67,7 @@ export default function App() {
         <Route path="articles" element={
           <>
             <ArticleForm />
-            <Articles articles={articles} getArticles={getArticles} />
+            <Articles spinner={spinner} articles={articles} getArticles={getArticles} />
           </>
         } />
       </Routes>

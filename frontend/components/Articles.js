@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 
 export default function Articles(props) {
-  const { articles, getArticles } = props
+  const { spinner, articles, getArticles } = props
 
   if (!window.localStorage.getItem('token')) {
     return <Navigate to="/" />
@@ -11,7 +11,9 @@ export default function Articles(props) {
   useEffect(() => {
     getArticles()
   }, [])
-  
+
+  if ()
+
   return (
     <div className="articles">
       <h2>Articles</h2>
