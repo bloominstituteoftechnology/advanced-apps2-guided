@@ -57,8 +57,7 @@ export default function App() {
   const postArticle = article => {
     axiosWithAuth().post(articlesUrl, article)
       .then(res => {
-
-        return 'foo'
+        
       })
       .catch(err => {
 
