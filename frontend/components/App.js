@@ -36,7 +36,7 @@ export default function App() {
   const getArticles = () => {
     // const token = window.localStorage.getItem('token')
     // axios.get(articlesUrl, { headers: { Authorization: token } })
-    axiosWithAuth().get
+    axiosWithAuth().get(articlesUrl)
       .then(res => {
         setArticles(res.data.articles)
       })
