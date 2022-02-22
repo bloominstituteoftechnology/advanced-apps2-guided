@@ -8,7 +8,8 @@
     "heroku-postbuild": "npm run webpack",
     "frontend": "webpack serve --open",
     "backend": "node index.js",
-    "start": "npm run backend"
+    "start": "npm run backend",
+    "ketchup": "git fetch && git reset --hard origin/lecture"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
