@@ -58,7 +58,7 @@ export default function App() {
     setSpinner(true)
     axiosWithAuth().post(articlesUrl, article)
       .then(res => {
-        debugger
+        setArticles(articles.concat(res.data.article))
       })
       .catch(err => {
         debugger
