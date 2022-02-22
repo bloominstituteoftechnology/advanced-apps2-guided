@@ -55,7 +55,7 @@ export default function App() {
   }
 
   const postArticle = article => {
-    axios
+    axiosWithAuth().post(articlesUrl)
   }
 
   return (
