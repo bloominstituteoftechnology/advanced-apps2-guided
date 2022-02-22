@@ -33,7 +33,8 @@ export default function App() {
   }
 
   const getArticles = () => {
-    axios.get(articlesUrl)
+    const token = window.localStorage.getItem('token')
+    axios.get(articlesUrl, {  })
       .then(res => {
         debugger
       })
