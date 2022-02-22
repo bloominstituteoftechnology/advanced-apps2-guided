@@ -4,14 +4,14 @@ import { Navigate } from 'react-router-dom'
 export default function Articles(props) {
   const { articles, getArticles } = props
 
-  useEffect(() => {
-    getArticles()
-  }, [])
-
   if (!window.localStorage.getItem('token')) {
     return <Navigate to="/" />
   }
 
+  useEffect(() => {
+    getArticles()
+  }, [])
+  
   return (
     <div className="articles">
       <h2>Articles</h2>
