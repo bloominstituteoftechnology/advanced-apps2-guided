@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {  } from 'react-router-dom'
+import { Navi } from 'react-router-dom'
 
 export default function Articles(props) {
   const { articles, getArticles } = props
