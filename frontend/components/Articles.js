@@ -12,6 +12,8 @@ export default function Articles(props) {
     getArticles()
   }, [])
 
+  // if (spinner) return 'fetching articles...'
+
   return (
     <div className="articles">
       <h2>Articles</h2>
