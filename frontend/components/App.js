@@ -28,8 +28,6 @@ export default function App() {
   }
 
   const logout = () => {
-    // wipe token from ls
-    // redirect to login '/'
     window.localStorage.removeItem('token')
     navigate('/')
   }
