@@ -31,6 +31,7 @@ export default function App() {
     // wipe token from ls
     // redirect to login '/'
     window.localStorage.removeItem('token')
+    navigate('/')
   }
 
   const getArticles = () => {
