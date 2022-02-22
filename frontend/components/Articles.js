@@ -8,7 +8,9 @@ export default function Articles(props) {
     getArticles()
   }, [])
 
-  if (!window.l)
+  if (!window.localStorage.getItem('token')) {
+    return <Navigate to="/" />
+  }
 
   return (
     <div className="articles">
