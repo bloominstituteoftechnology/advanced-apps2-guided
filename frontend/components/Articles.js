@@ -8,6 +8,8 @@ export default function Articles(props) {
     getArticles()
   }, [])
 
+  if (!window.l)
+
   return (
     <div className="articles">
       <h2>Articles</h2>
