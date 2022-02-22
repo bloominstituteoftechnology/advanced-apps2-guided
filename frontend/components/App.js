@@ -37,6 +37,7 @@ export default function App() {
   const getArticles = () => {
     // const token = window.localStorage.getItem('token')
     // axios.get(articlesUrl, { headers: { Authorization: token } })
+    setSpinner(true)
     axiosWithAuth().get(articlesUrl)
       .then(res => {
         setArticles(res.data.articles)
@@ -47,6 +48,9 @@ export default function App() {
         } else {
           debugger
         }
+      })
+      .finally(() => {
+        
       })
   }
 
