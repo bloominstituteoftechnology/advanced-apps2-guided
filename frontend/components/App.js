@@ -55,15 +55,16 @@ export default function App() {
   }
 
   const postArticle = article => {
+    setSpinner(true)
     axiosWithAuth().post(articlesUrl, article)
       .then(res => {
-        
+        debugger
       })
       .catch(err => {
-
+        debugger
       })
       .finally(() => {
-
+        setSpinner(false)
       })
   }
 
