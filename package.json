@@ -1,5 +1,5 @@
 {
-  "name": "web-sprint-challenge-advanced-apps-solution",
+  "name": "authed-routes-gp",
   "version": "0.0.1",
   "scripts": {
     "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
