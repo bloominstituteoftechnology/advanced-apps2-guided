@@ -33,7 +33,14 @@ export default function App() {
   }
 
   const getArticles = () => {
+    axios.get(articlesUrl)
+      .then(res => {
+        debugger
 
+      })
+      .catch(err => {
+        
+      })
   }
 
   const postArticle = article => {
