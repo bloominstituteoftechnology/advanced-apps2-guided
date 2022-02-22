@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Articles(props) {
   const { articles, getArticles } = props
+
+  useEffect(() => {
+    getArticles()
+  }, [])
 
   return (
     <div className="articles">
