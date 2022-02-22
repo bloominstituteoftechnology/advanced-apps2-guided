@@ -12,7 +12,8 @@ export default function App() {
 
   const login = () => {
     // hit the API, obtain JWT
-    // persist token in client window
+    // persist token in client window.localStorage
+    // redirect user to /articles route
   }
 
   const logout = () => {
