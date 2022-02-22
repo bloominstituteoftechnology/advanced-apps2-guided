@@ -13,10 +13,11 @@ export default function App() {
 
   const login = ({ username, password }) => {
     // hit the API, obtain JWT
-    // persist token in client window.localStorage
-    // redirect user to /articles route
     axios.post(loginUrl, { username, password })
       .then(res => {
+        // persist token in client window.localStorage
+        // redirect user to /articles route
+        window.localStorage.setItem('token')
         debugger
       })
       .catch(err => {
