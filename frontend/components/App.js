@@ -61,6 +61,7 @@ export default function App() {
         setArticles(articles.concat(res.data.article))
       })
       .catch(err => {
+        // if err.response.status === 401, navigate to login...
         debugger
       })
       .finally(() => {
