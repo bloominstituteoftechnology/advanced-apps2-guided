@@ -10,10 +10,7 @@ const loginUrl = 'http://localhost:9000/api/login'
 export default function App() {
   const [articles, setArticles] = useState([])
 
-  const redirectToLogin = () => {}
-  const redirectToArticles = () => {}
-
-  const login = ({ username, password }) => {
+  const login = () => {
 
   }
 

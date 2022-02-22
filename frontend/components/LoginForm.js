@@ -14,14 +14,11 @@ export default function LoginForm(props) {
 
   const onSubmit = evt => {
     evt.preventDefault()
-  }
 
-  const isDisabled = () => {
-    return Object.values(values).some(input => !input.trim().length)
   }
 
   return (
-    <form id="loginForm">
+    <form id="loginForm" onSubmit={onSubmit}>
       <h2>Login</h2>
       <input
         maxLength={20}
@@ -37,7 +34,7 @@ export default function LoginForm(props) {
         placeholder="Enter password"
         id="password"
       />
-      <button disabled={isDisabled()} id="submitCredentials">Submit credentials</button>
+      <button id="submitCredentials">Submit credentials</button>
     </form>
   )
 }
