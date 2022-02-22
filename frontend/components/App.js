@@ -80,7 +80,7 @@ export default function App() {
         <Route path="/" element={<LoginForm login={login} />} />
         <Route path="articles" element={
           <>
-            <ArticleForm />
+            <ArticleForm postArticle={postArticle} />
             <Articles spinner={spinner} articles={articles} getArticles={getArticles} />
           </>
         } />
