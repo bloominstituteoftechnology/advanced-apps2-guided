@@ -20,7 +20,7 @@ export default function App() {
         // persist token in client window.localStorage
         window.localStorage.setItem('token', res.data.token)
         // redirect user to /articles route
-        navigate('/articles')
+        navigate('/articles') // v.5 history.push('/articles')
       })
       .catch(err => {
         debugger
