@@ -18,9 +18,9 @@ export default function App() {
     axios.post(loginUrl, { username, password })
       .then(res => {
         // persist token in client window.localStorage
-        // redirect user to /articles route
         window.localStorage.setItem('token', res.data.token)
-
+        // redirect user to /articles route
+        navigate('/articles')
       })
       .catch(err => {
         debugger
