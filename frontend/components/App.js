@@ -39,7 +39,11 @@ export default function App() {
         setArticles(res.data.articles)
       })
       .catch(err => {
-        debugger
+        if (err.response.status == 401) {
+          navigate('/')
+        } else {
+          debugger
+        }
       })
   }
 
