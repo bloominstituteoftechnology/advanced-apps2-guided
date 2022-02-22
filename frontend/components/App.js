@@ -16,6 +16,12 @@ export default function App() {
     // persist token in client window.localStorage
     // redirect user to /articles route
     axios.post(loginUrl, { username, password })
+      .then(res => {
+        debugger
+      })
+      .catch(err => {
+        debugger
+      })
   }
 
   const logout = () => {
