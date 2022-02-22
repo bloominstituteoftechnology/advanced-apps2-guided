@@ -15,7 +15,7 @@ export default function App() {
     // hit the API, obtain JWT
     // persist token in client window.localStorage
     // redirect user to /articles route
-    axios.get
+    axios.post(loginUrl, { username:  })
   }
 
   const logout = () => {
