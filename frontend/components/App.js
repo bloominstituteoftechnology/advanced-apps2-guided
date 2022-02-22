@@ -17,8 +17,7 @@ export default function App() {
       .then(res => {
         // persist token in client window.localStorage
         // redirect user to /articles route
-        window.localStorage.setItem('token')
-        debugger
+        window.localStorage.setItem('token', res.data.token)
       })
       .catch(err => {
         debugger
