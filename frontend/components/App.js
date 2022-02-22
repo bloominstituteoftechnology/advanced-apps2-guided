@@ -36,10 +36,9 @@ export default function App() {
     axios.get(articlesUrl)
       .then(res => {
         debugger
-
       })
       .catch(err => {
-        
+        debugger
       })
   }
 
