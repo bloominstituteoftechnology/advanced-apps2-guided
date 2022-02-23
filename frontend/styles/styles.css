@@ -82,6 +82,10 @@ nav a.active {
   margin-bottom: 1rem;
 }
 
+.article:hover {
+  cursor: pointer;
+}
+
 .article p, .article h3 {
   width: 150px;
   white-space: nowrap;
