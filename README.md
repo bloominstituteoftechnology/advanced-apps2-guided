@@ -1,4 +1,4 @@
-# Authed Routes GP
+# Authed Routes GP && AJAX II
 
 ## Setup
 
