@@ -14,7 +14,7 @@ export default function ArticleForm(props) {
   const onSubmit = evt => {
     evt.preventDefault()
     postArticle(values)
-    setValues(initialFormValues) // ??????
+    setValues(initialFormValues)
   }
 
   return (
