@@ -11,7 +11,6 @@ const loginUrl = 'http://localhost:9000/api/login'
 
 export default function App() {
   const [articles, setArticles] = useState([])
-  const [spinner, setSpinner] = useState(false)
 
   const navigate = useNavigate()
 
@@ -35,9 +34,6 @@ export default function App() {
   }
 
   const getArticles = () => {
-    // const token = window.localStorage.getItem('token')
-    // axios.get(articlesUrl, { headers: { Authorization: token } })
-    setSpinner(true)
     axiosWithAuth().get(articlesUrl)
       .then(res => {
         setArticles(res.data.articles)
@@ -49,13 +45,9 @@ export default function App() {
           debugger
         }
       })
-      .finally(() => {
-        setSpinner(false)
-      })
   }
 
   const postArticle = article => {
-    setSpinner(true)
     axiosWithAuth().post(articlesUrl, article)
       .then(res => {
         setArticles(articles.concat(res.data.article))
@@ -63,9 +55,6 @@ export default function App() {
       .catch(err => {
         // if err.response.status === 401, navigate to login...
         debugger
-      })
-      .finally(() => {
-        setSpinner(false)
       })
   }
 
@@ -82,7 +71,7 @@ export default function App() {
         <Route path="articles" element={
           <>
             <ArticleForm postArticle={postArticle} />
-            <Articles spinner={spinner} articles={articles} getArticles={getArticles} />
+            <Articles articles={articles} getArticles={getArticles} />
           </>
         } />
       </Routes>
