@@ -31,7 +31,7 @@ async function postArticle(req, res, ctx) {
 // 4
 async function updateArticle(req, res, ctx) {
   const token = req.headers.get('authorization')
-  const [status, payload] = await help.updateArticle(token, req.body, req.params.article_id)
+  const [status, payload] = await help.updateArticle(token, req.body, req.params.id)
   return res(
     ctx.status(status),
     ctx.json(payload),
@@ -40,7 +40,7 @@ async function updateArticle(req, res, ctx) {
 // 5
 async function deleteArticle(req, res, ctx) {
   const token = req.headers.get('authorization')
-  const [status, payload] = await help.deleteArticle(token, req.params.article_id)
+  const [status, payload] = await help.deleteArticle(token, req.params.id)
   return res(
     ctx.status(status),
     ctx.json(payload),
@@ -61,8 +61,8 @@ const getHandlers = () => {
     rest.post('http://localhost:9000/api/login', login),
     rest.get('http://localhost:9000/api/articles', getArticles),
     rest.post('http://localhost:9000/api/articles', postArticle),
-    rest.put('http://localhost:9000/api/articles/:article_id', updateArticle),
-    rest.delete('http://localhost:9000/api/articles/:article_id', deleteArticle),
+    rest.put('http://localhost:9000/api/articles/:id', updateArticle),
+    rest.delete('http://localhost:9000/api/articles/:id', deleteArticle),
     rest.all('http://localhost:9000/*', catchAll),
   ]
 }

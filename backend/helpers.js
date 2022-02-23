@@ -11,19 +11,19 @@ const reset = () => {
   getId = () => ++id
   articles = [
     {
-      article_id: getId(),
+      id: getId(),
       title: 'Closures',
       text: 'Blah blah closures',
       topic: topics[0],
     },
     {
-      article_id: getId(),
+      id: getId(),
       title: 'Hooks',
       text: 'Blah blah hooks',
       topic: topics[1],
     },
     {
-      article_id: getId(),
+      id: getId(),
       title: 'Express',
       text: 'Blah blah express',
       topic: topics[2],
@@ -106,7 +106,7 @@ async function postArticle(token, article) {
   }
   try {
     validatedArticle = await articleSchema.validate(article, { stripUnknown: true })
-    newArticle = { article_id: getId(), ...validatedArticle }
+    newArticle = { id: getId(), ...validatedArticle }
     articles.push(newArticle)
   } catch (err) {
     return [422, { message: `Ouch: ${err.message}` }]
@@ -118,15 +118,15 @@ async function postArticle(token, article) {
   return [201, payload]
 }
 
-async function updateArticle(token, article, article_id) {
+async function updateArticle(token, article, id) {
   let decodedToken, validatedArticle
   try {
     decodedToken = await checkToken(token)
   } catch (err) {
     return [401, { message: `Ouch: ${err.message}` }]
   }
-  if (!articles.find(art => art.article_id == article_id)) {
-    return [404, { message: `Ouch: Article with article_id ${article_id} not found!` }]
+  if (!articles.find(art => art.id == id)) {
+    return [404, { message: `Ouch: Article with id ${id} not found!` }]
   }
   try {
     validatedArticle = await articleSchema.validate(article, { stripUnknown: true })
@@ -134,30 +134,30 @@ async function updateArticle(token, article, article_id) {
     return [422, { message: `Ouch: ${err.message}` }]
   }
   articles = articles.map(art => {
-    return art.article_id == article_id ? { ...art, ...validatedArticle } : art
+    return art.id == id ? { ...art, ...validatedArticle } : art
   })
   const payload = {
     message: `Hey ${decodedToken.username}! Great update!`,
-    article: articles.find(art => art.article_id == article_id),
+    article: articles.find(art => art.id == id),
   }
   return [200, payload]
 }
 
-async function deleteArticle(token, article_id) {
+async function deleteArticle(token, id) {
   let decodedToken
   try {
     decodedToken = await checkToken(token)
   } catch (err) {
     return [422, { message: `Ouch: ${err.message}` }]
   }
-  if (!articles.find(art => art.article_id == article_id)) {
-    return [401, { message: `Ouch: Article with article_id ${article_id} not found!` }]
+  if (!articles.find(art => art.id == id)) {
+    return [401, { message: `Ouch: Article with id ${id} not found!` }]
   }
   articles = articles.filter(art => {
-    return art.article_id != article_id
+    return art.id != id
   })
   const payload = {
-    message: `Hey ${decodedToken.username}! Article ${article_id} was deleted!`,
+    message: `Hey ${decodedToken.username}! Article ${id} was deleted!`,
   }
   return [200, payload]
 }

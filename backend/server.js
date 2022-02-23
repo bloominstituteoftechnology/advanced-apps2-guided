@@ -36,17 +36,17 @@ server.post('/api/articles', async (req, res) => {
   }, 1000)
 })
 // 4
-server.put('/api/articles/:article_id', async (req, res) => {
+server.put('/api/articles/:id', async (req, res) => {
   const token = req.headers.authorization
-  const [status, payload] = await help.updateArticle(token, req.body, req.params.article_id)
+  const [status, payload] = await help.updateArticle(token, req.body, req.params.id)
   setTimeout(() => {
     res.status(status).json(payload)
   }, 1000)
 })
 // 5
-server.delete('/api/articles/:article_id', async (req, res) => {
+server.delete('/api/articles/:id', async (req, res) => {
   const token = req.headers.authorization
-  const [status, payload] = await help.deleteArticle(token, req.params.article_id)
+  const [status, payload] = await help.deleteArticle(token, req.params.id)
   setTimeout(() => {
     res.status(status).json(payload)
   }, 1000)
