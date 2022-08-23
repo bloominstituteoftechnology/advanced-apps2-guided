@@ -9,7 +9,9 @@ export default function Articles(props) {
     return <Navigate to="/" />
   }
 
-  useEffect()
+  useEffect(() => {
+    getArticles()
+  }, [])
 
   return (
     <div className="articles">
