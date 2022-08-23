@@ -10,6 +10,7 @@ const loginUrl = 'http://localhost:9000/api/login'
 
 export default function App() {
   const [articles, setArticles] = useState([])
+  const [error, setError] = useState('')
 
   const navigate = useNavigate()
 
@@ -42,6 +43,7 @@ export default function App() {
     <>
       <button id="logout" onClick={logout}>Logout</button>
       <h1>Advanced Applications</h1>
+      <div>{error}</div>
       <nav>
         <NavLink id="loginScreen" to="/">Login</NavLink>
         <NavLink id="articlesScreen" to="/articles">Articles</NavLink>
