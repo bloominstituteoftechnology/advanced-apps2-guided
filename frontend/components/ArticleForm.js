@@ -13,7 +13,7 @@ export default function ArticleForm(props) {
 
   const onSubmit = evt => {
     evt.preventDefault()
-    //
+    postArticle(values)
   }
 
   return (
