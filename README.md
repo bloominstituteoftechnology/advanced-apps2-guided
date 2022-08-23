@@ -15,9 +15,7 @@ Other browser/Node/NPM configurations might work but haven't been tested.
 - Launch the project on a development server executing `npm run dev`.
 - Visit your app by navigating to `http://localhost:3000` with Chrome.
 
-## Project Instructions
-
-### API Endpoints
+## API Endpoints
 
 The following endpoints exist in this project and should be explored with Postman prior to coding:
 
