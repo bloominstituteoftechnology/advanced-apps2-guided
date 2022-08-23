@@ -35,7 +35,7 @@ export default function App() {
     axios({
       method: 'get',
       headers: {
-        Authorization: 
+        Authorization: localStorage.getItem('token')
       }
     })
       .then(res => {
