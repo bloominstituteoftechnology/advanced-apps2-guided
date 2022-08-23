@@ -4,6 +4,10 @@ import { Navigate } from 'react-router-dom'
 export default function Articles(props) {
   const { articles } = props
 
+  if (!localStorage.getItem('token')) {
+    
+  }
+
   return (
     <div className="articles">
       <h2>Articles</h2>
