@@ -32,7 +32,7 @@ export default function App() {
   }
 
   const getArticles = () => {
-
+    debugger
   }
 
   const postArticle = (article) => {
@@ -53,7 +53,11 @@ export default function App() {
         <Route path="articles" element={
           <>
             <ArticleForm />
-            <Articles articles={articles} setError={setError}/>
+            <Articles
+              articles={articles}
+              setError={setError}
+              getArticles={getArticles}
+            />
           </>
         } />
       </Routes>
