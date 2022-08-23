@@ -11,7 +11,7 @@ const loginUrl = 'http://localhost:9000/api/login'
 export default function App() {
   const [articles, setArticles] = useState([])
 
-  const login = () => {
+  const login = ({ username, password }) => {
     axios.post(loginUrl, { username, password }) // ???
   }
 
