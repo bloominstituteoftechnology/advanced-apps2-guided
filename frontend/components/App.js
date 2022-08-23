@@ -71,7 +71,7 @@ export default function App() {
         <Route path="/" element={<LoginForm login={login} />} />
         <Route path="articles" element={
           <>
-            <ArticleForm />
+            <ArticleForm postArticle={postArticle} />
             <Articles
               articles={articles}
               setError={setError}
