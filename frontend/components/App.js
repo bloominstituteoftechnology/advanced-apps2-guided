@@ -23,7 +23,7 @@ export default function App() {
 
   }
 
-  const postArticle = article => {
+  const postArticle = (article) => {
 
   }
 
