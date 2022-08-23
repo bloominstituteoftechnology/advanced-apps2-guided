@@ -5,7 +5,7 @@ export default function Articles(props) {
   const { articles } = props
 
   if (!localStorage.getItem('token')) {
-    
+    return <Navigate to="/" />
   }
 
   return (
