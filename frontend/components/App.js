@@ -11,12 +11,14 @@ const loginUrl = 'http://localhost:9000/api/login'
 export default function App() {
   const [articles, setArticles] = useState([])
 
+  const navigate = useNavigate()
+
   const login = ({ username, password }) => {
     axios.post(loginUrl, { username, password })
       .then(res => {
         const { token } = res.data
         localStorage.setItem('token', token)
-        // redirect over to the /articles screen
+        navigate('/articles')
       })
       .catch(err => {
         debugger
