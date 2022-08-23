@@ -15,7 +15,7 @@ export default function App() {
     axios.post(loginUrl, { username, password })
       .then(res => {
         const { token } = res.data // 'token'
-        local
+        localStorage.setItem('token', token)
 
         // shove the token in localstorage
         // redirect over to the /articles screen
