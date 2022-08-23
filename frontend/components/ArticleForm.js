@@ -14,7 +14,7 @@ export default function ArticleForm(props) {
   const onSubmit = evt => {
     evt.preventDefault()
     postArticle(values) // how many outcomes does this have?
-    setValues(initialFormValues) // bad because the post might fail
+    // setValues(initialFormValues) // bad because the post might fail
   }
 
   return (
