@@ -1,11 +1,12 @@
 import axios from 'axios'
 
 export default () => {
-  const token = localStorage.getItem('token')
-
   return axios.create({
     headers: {
-      Authorization: token,
+      Authorization: localStorage.getItem('token'),
     },
   })
 }
+
+// whomever uses this module
+
