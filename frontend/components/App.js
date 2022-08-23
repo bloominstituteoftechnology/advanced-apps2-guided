@@ -50,7 +50,7 @@ export default function App() {
       })
   }
 
-  const postArticle = (article) => {
+  const postArticle = (article, success) => {
     // axios({
     //   url: articlesUrl,
     //   data: article,
@@ -64,6 +64,7 @@ export default function App() {
         const { article } = res.data
         setArticles(articles.concat(article))
         setError('')
+        success()
       })
       .catch(err => {
         debugger
