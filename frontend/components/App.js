@@ -12,7 +12,7 @@ export default function App() {
   const [articles, setArticles] = useState([])
 
   const login = () => {
-    axios.post()
+    axios.post(loginUrl, { username, password })
   }
 
   const logout = () => {
