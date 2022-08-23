@@ -27,7 +27,7 @@ export default function App() {
   }
 
   return (
-    <React.StrictMode>
+    <>
       <button id="logout" onClick={logout}>Logout</button>
       <h1>Advanced Applications</h1>
       <nav>
@@ -43,6 +43,6 @@ export default function App() {
           </>
         } />
       </Routes>
-    </React.StrictMode>
+    </>
   )
 }
