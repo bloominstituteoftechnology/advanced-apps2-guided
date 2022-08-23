@@ -14,7 +14,9 @@ export default function App() {
   const login = ({ username, password }) => {
     axios.post(loginUrl, { username, password })
       .then(res => {
-        // 
+        // pull the token from res
+        // shove the token in localstorage
+        // redirect over to the /articles screen
       })
       .catch(err => {
         debugger
