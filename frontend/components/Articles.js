@@ -2,10 +2,10 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 
 export default function Articles(props) {
-  const { articles } = props
+  const { articles, setError } = props
 
   if (!localStorage.getItem('token')) {
-    props.setError('be gone!!!!! You can not touch that')
+    setError('be gone!!!!! You can not touch that')
     return <Navigate to="/" />
   }
 
