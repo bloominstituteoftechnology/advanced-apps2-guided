@@ -26,7 +26,7 @@ export default function App() {
   }
 
   const logout = () => {
-
+    localStorage.removeItem('token'
   }
 
   const getArticles = () => {
