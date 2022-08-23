@@ -33,13 +33,14 @@ export default function App() {
   }
 
   const getArticles = () => {
-    axios({
-      url: articlesUrl,
-      method: 'get',
-      headers: {
-        Authorization: localStorage.getItem('token')
-      },
-    })
+    // axios({
+    //   url: articlesUrl,
+    //   method: 'get',
+    //   headers: {
+    //     Authorization: localStorage.getItem('token')
+    //   },
+    // })
+    axiosWithAuth().get(articlesUrl) // this is going t
       .then(res => {
         setArticles(res.data.articles)
       })
@@ -57,14 +58,14 @@ export default function App() {
         Authorization: localStorage.getItem('token')
       },
     })
-    .then(res => {
-      const { article } = res.data
-      setArticles(articles.concat(article))
-      setError('')
-    })
-    .catch(err => {
-      debugger
-    })
+      .then(res => {
+        const { article } = res.data
+        setArticles(articles.concat(article))
+        setError('')
+      })
+      .catch(err => {
+        debugger
+      })
   }
 
   return (
