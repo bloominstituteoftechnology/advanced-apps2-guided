@@ -12,10 +12,9 @@ export default function App() {
   const [articles, setArticles] = useState([])
 
   const login = ({ username, password }) => {
-    debugger
     axios.post(loginUrl, { username, password })
       .then(res => {
-        debugger
+        // 
       })
       .catch(err => {
         debugger
