@@ -40,7 +40,7 @@ export default function App() {
     //     Authorization: localStorage.getItem('token')
     //   },
     // })
-    axiosWithAuth().get(articlesUrl) // this is going t
+    axiosWithAuth().get(articlesUrl) // this is going to send the token
       .then(res => {
         setArticles(res.data.articles)
       })
