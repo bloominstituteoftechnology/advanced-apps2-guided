@@ -6,6 +6,10 @@ export default function ArticleForm(props) {
   const [values, setValues] = useState(initialFormValues)
   const { postArticle } = props
 
+  const resetForm = () => {
+    setValues(initialFormValues)
+  }
+
   const onChange = evt => {
     const { id, value } = evt.target
     setValues({ ...values, [id]: value })
@@ -13,7 +17,7 @@ export default function ArticleForm(props) {
 
   const onSubmit = evt => {
     evt.preventDefault()
-    postArticle(values) // how many outcomes does this have?
+    postArticle(values, resetForm) // how many outcomes does this have?
     // setValues(initialFormValues) // bad because the post might fail
   }
 
