@@ -40,7 +40,7 @@ export default function App() {
       },
     })
       .then(res => {
-        debugger
+        setArticles(res.data.articles)
       })
       .catch(err => {
         debugger
