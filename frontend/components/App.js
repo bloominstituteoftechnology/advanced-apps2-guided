@@ -50,14 +50,15 @@ export default function App() {
   }
 
   const postArticle = (article) => {
-    axios({
-      url: articlesUrl,
-      data: article,
-      method: 'post',
-      headers: {
-        Authorization: localStorage.getItem('token')
-      },
-    })
+    // axios({
+    //   url: articlesUrl,
+    //   data: article,
+    //   method: 'post',
+    //   headers: {
+    //     Authorization: localStorage.getItem('token')
+    //   },
+    // })
+    axiosWithAuth().post(articlesUrl, article)
       .then(res => {
         const { article } = res.data
         setArticles(articles.concat(article))
