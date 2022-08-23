@@ -50,11 +50,17 @@ export default function App() {
   const postArticle = (article) => {
     axios({
       url: articlesUrl,
+      data: article,
       method: 'post',
       headers: {
         Authorization: localStorage.getItem('token')
       },
-      data: article,
+    })
+    .then(res => {
+      debugger
+    })
+    .catch(err => {
+      debugger
     })
   }
 
