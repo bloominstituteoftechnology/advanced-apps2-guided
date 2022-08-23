@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 
 export default function Articles(props) {
-  const { articles, setError } = props
+  const { articles, setError, getArticles } = props
 
   if (!localStorage.getItem('token')) {
     setError('be gone!!!!! You can not touch that')
     return <Navigate to="/" />
   }
+
+  useEffect()
 
   return (
     <div className="articles">
