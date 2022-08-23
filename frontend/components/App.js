@@ -64,7 +64,6 @@ export default function App() {
         const { article } = res.data
         setArticles(articles.concat(article))
         setError('')
-        resetForm()
       })
       .catch(err => {
         debugger
