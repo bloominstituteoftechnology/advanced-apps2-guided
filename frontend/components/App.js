@@ -16,8 +16,6 @@ export default function App() {
       .then(res => {
         const { token } = res.data
         localStorage.setItem('token', token)
-
-        // shove the token in localstorage
         // redirect over to the /articles screen
       })
       .catch(err => {
