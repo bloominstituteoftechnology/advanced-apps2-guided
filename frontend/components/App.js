@@ -57,7 +57,8 @@ export default function App() {
       },
     })
     .then(res => {
-      debugger
+      const { article } = res.data
+      
     })
     .catch(err => {
       debugger
