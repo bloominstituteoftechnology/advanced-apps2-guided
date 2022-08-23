@@ -32,7 +32,7 @@ export default function App() {
   }
 
   const getArticles = () => {
-    axios({
+    axios({ // jQuery
       url: articlesUrl,
       method: 'get',
       headers: {
