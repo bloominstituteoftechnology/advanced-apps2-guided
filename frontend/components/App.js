@@ -34,10 +34,8 @@ export default function App() {
   const getArticles = () => {
     axios({
       method: 'get',
-      url: articlesUrl,
-      data: {
-        firstName: 'Fred',
-        lastName: 'Flintstone'
+      headers: {
+        Authorization: 
       }
     })
       .then(res => {
