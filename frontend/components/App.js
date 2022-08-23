@@ -59,6 +59,7 @@ export default function App() {
     .then(res => {
       const { article } = res.data
       setArticles(articles.concat(article))
+      setError('')
     })
     .catch(err => {
       debugger
