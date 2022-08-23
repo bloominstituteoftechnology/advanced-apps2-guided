@@ -10,3 +10,6 @@ export default () => {
 
 // whomever uses this module
 
+import axiosWithAuth
+
+// axiosWithAuth().get('/articles')
