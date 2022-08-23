@@ -3,9 +3,10 @@ import { render, fireEvent, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { setupServer, getHandlers } from './backend/mock-server'
 import App from './frontend/components/App'
+import { BrowserRouter } from 'react-router-dom'
 
-jest.setTimeout(750) // default 5000 too long for Codegrade
-const waitForOptions = { timeout: 150 }
+jest.setTimeout(1750) // default 5000 too long for Codegrade
+const waitForOptions = { timeout: 1500 }
 const queryOptions = { exact: false }
 
 const renderApp = ui => {
@@ -22,7 +23,11 @@ afterAll(() => {
   server.close()
 })
 beforeEach(() => {
-  renderApp(<App />)
+  renderApp(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  )
 })
 afterEach(() => {
   server.resetHandlers(...getHandlers())
@@ -31,8 +36,8 @@ afterEach(() => {
 const LoginLink = () => document.querySelector('#loginScreen')
 const ArticlesLink = () => document.querySelector('#articlesScreen')
 const PrivateLink = () => document.querySelector('#privateScreen')
-const usernameInput = () => document.querySelector('#usernameInput')
-const passwordInput = () => document.querySelector('#passwordInput')
+const usernameInput = () => document.querySelector('#username')
+const passwordInput = () => document.querySelector('#password')
 const loginBtn = () => document.querySelector('#submitCredentials')
 
 describe('Advanced Applications', () => {
