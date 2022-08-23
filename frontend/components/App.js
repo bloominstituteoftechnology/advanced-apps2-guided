@@ -33,9 +33,11 @@ export default function App() {
 
   const getArticles = () => {
     axios.get(articlesUrl)
-      .then()
+      .then(res => {
+        debugger
+      })
       .catch(err => {
-
+        debugger
       })
   }
 
