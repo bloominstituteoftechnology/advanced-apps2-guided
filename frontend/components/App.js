@@ -33,11 +33,11 @@ export default function App() {
 
   const getArticles = () => {
     axios({
+      url: articlesUrl,
       method: 'get',
       headers: {
         Authorization: localStorage.getItem('token')
       },
-      data: { foo: 'bar' }
     })
       .then(res => {
         debugger
