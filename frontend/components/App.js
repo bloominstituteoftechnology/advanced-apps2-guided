@@ -48,7 +48,14 @@ export default function App() {
   }
 
   const postArticle = (article) => {
-
+    axios({
+      url: articlesUrl,
+      method: 'post',
+      headers: {
+        Authorization: localStorage.getItem('token')
+      },
+      data: article,
+    })
   }
 
   return (
