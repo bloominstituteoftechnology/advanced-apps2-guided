@@ -32,7 +32,7 @@ export default function App() {
   }
 
   const getArticles = () => {
-    axios.get(articlesUrl)
+    axios.get(articlesUrl) // we are not providing token :(
       .then(res => {
         debugger
       })
