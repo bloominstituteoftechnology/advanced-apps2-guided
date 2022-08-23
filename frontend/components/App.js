@@ -13,6 +13,12 @@ export default function App() {
 
   const login = ({ username, password }) => {
     axios.post(loginUrl, { username, password })
+      .then(res => {
+        debugger
+      })
+      .catch(err => {
+        debugger
+      })
   }
 
   const logout = () => {
