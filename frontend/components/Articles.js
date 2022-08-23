@@ -5,6 +5,7 @@ export default function Articles(props) {
   const { articles } = props
 
   if (!localStorage.getItem('token')) {
+    props.setError('be gone!!!!! You can not touch that')
     return <Navigate to="/" />
   }
 
