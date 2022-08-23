@@ -32,7 +32,7 @@ export default function App() {
   }
 
   const getArticles = () => {
-    debugger
+    
   }
 
   const postArticle = (article) => {
