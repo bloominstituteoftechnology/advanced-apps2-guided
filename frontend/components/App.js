@@ -14,7 +14,7 @@ export default function App() {
   const login = ({ username, password }) => {
     axios.post(loginUrl, { username, password })
       .then(res => {
-        const { token } = res.data // 'token'
+        const { token } = res.data
         localStorage.setItem('token', token)
 
         // shove the token in localstorage
